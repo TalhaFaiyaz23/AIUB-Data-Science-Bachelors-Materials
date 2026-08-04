@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Define a structure to represent a person
+struct Person {
+    string name;
+    int age;
+    double money;
+};
+
+void displayPerson(Person person[], int size) {
+    for(int i=0; i<size; i++){
+        cout << "Name: "<< person[i].name << " , "<< "Age :" << person[i].age << " , "<< "Money: "<< person[i].money << endl;
+    }
+
+}
+void Maxmoney(Person person[], int size){
+    for(int i=0; i<size; i++){
+        if (person[i].money > 100){
+            cout << person[i].name <<" has more money than 100 and the amount is: " << person[i].money << endl;
+        }
+    }
+}
+int main() {
+
+    int a;
+    cout << "How many person you want to add: ";
+    cin >> a;
+    Person person[a];
+    for(int i=0; i<a; i++){
+        cout << "Person Name : ";
+        cin >> person[i].name;
+        cout << "Person Age : ";
+        cin >> person[i].age;
+        cout << "Person Money : ";
+        cin >> person[i].money;
+        cout<<endl;
+    }
+    cout << endl;
+    displayPerson(person,a);
+    cout << endl;
+    Maxmoney(person,a);
+
+
+    return 0;
+}
